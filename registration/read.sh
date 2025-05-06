@@ -1,0 +1,51 @@
+Registrations> db['Persons'].find().pretty();
+[
+  {
+    _id: ObjectId('6637b342a1b3e1df40f89101'),
+    firstName: 'Carlos',
+    lastName: 'Gómez',
+    age: 30,
+    email: 'carlos.gomez@example.com',
+    address: {
+      street: 'Calle Falsa 123',
+      city: 'Madrid',
+      postalCode: '28001',
+      country: 'España'
+    },
+    phoneNumbers: [ '+34 600 123 456', '+34 911 123 456' ],
+    isActive: true,
+    createdAt: ISODate('2024-01-15T10:00:00.000Z')
+  },
+  {
+    _id: ObjectId('6637b342a1b3e1df40f89102'),
+    firstName: 'Lucía',
+    lastName: 'Martínez',
+    age: 25,
+    email: 'lucia.martinez@example.com',
+    address: {
+      street: 'Avenida Siempre Viva 742',
+      city: 'Barcelona',
+      postalCode: '08001',
+      country: 'España'
+    },
+    phoneNumbers: [ '+34 612 345 678' ],
+    isActive: false,
+    createdAt: ISODate('2024-03-10T09:30:00.000Z')
+  },
+  {
+    _id: ObjectId('6637b342a1b3e1df40f89103'),
+    firstName: 'Juan',
+    lastName: 'Pérez',
+    age: 40,
+    email: 'juan.perez@example.com',
+    address: {
+      street: 'Gran Vía 1',
+      city: 'Valencia',
+      postalCode: '46001',
+      country: 'España'
+    },
+    phoneNumbers: [],
+    isActive: true,
+    createdAt: ISODate('2024-05-01T08:00:00.000Z')
+  }
+]
