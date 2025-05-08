@@ -1,1 +1,1032 @@
+------
+   The server generated these startup warnings when booting
+   2025-05-07T20:56:47.057-06:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-05-07T20:56:47.057-06:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+------
 
+test> use usuarioUNAB
+switched to db usuarioUNAB
+usuarioUNAB> db.usuarioUNAB.insertMany([
+...
+... { nombre: "Ana", ciudad: "Lima", edad: 28, correo: "anay@unab.edu.sv" },
+... { nombre: "Carlos", ciudad: "Bogotá", edad: 34, correo: "carlos@unab.edu.sv" },
+... { nombre: "María", ciudad: "Lima", edad: 22, correo: "maria@unab.edu.sv" },
+... { nombre: "José", ciudad: "Quito", edad: 40, correo: "jose@unab.edu.sv" },
+... { nombre: "Lucía", ciudad: "Bogotá", edad: 19, correo: "lucia@unab.edu.sv" },
+... { nombre: "Pedro", ciudad: "Lima", edad: 35, correo: "pedro@unab.edu.sv" } ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('681c28c3b5728ceda8b5f899'),
+    '1': ObjectId('681c28c3b5728ceda8b5f89a'),
+    '2': ObjectId('681c28c3b5728ceda8b5f89b'),
+    '3': ObjectId('681c28c3b5728ceda8b5f89c'),
+    '4': ObjectId('681c28c3b5728ceda8b5f89d'),
+    '5': ObjectId('681c28c3b5728ceda8b5f89e')
+  }
+}
+usuarioUNAB> db.usuarioUNAB.find()
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find({ ciudad: "Lima" })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find({ edad: { $gt: 30 } })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find({ edad: { $lte: 22 } })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find({ ciudad: { $ne: "Bogotá" } })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find({ ciudad: "Lima", edad: { $gt: 25 } })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  }
+]
+usuarioUNAB>
+usuarioUNAB> db.usuarioUNAB.find({ ciudad: { $in: ["Lima", "Bogotá"] } })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find({ ciudad: { $nin: ["Lima", "Quito"] } })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find({ $or: [ { edad: { $lt: 20 } }, { ciudad: "Quito" } ] })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  }
+]
+usuarioUNAB>
+usuarioUNAB> db.usuarioUNAB.find({}, { nombre: 1, ciudad: 1, _id: 0 })
+[
+  { nombre: 'Ana', ciudad: 'Lima' },
+  { nombre: 'Carlos', ciudad: 'Bogotá' },
+  { nombre: 'María', ciudad: 'Lima' },
+  { nombre: 'José', ciudad: 'Quito' },
+  { nombre: 'Lucía', ciudad: 'Bogotá' },
+  { nombre: 'Pedro', ciudad: 'Lima' },
+  { nombre: 'Ana', ciudad: 'Lima' },
+  { nombre: 'Carlos', ciudad: 'Bogotá' },
+  { nombre: 'María', ciudad: 'Lima' },
+  { nombre: 'José', ciudad: 'Quito' },
+  { nombre: 'Lucía', ciudad: 'Bogotá' },
+  { nombre: 'Pedro', ciudad: 'Lima' }
+]
+usuarioUNAB> db.usuarioUNAB.find({}, { correo: 0 })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35
+  }
+]
+usuarioUNAB>
+usuarioUNAB> db.usuarioUNAB.find().sort({ edad: 1 })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find().sort({ edad: -1 })
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find().limit(3)
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a5'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a6'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  }
+]
+usuarioUNAB> db.usuarioUNAB.find().skip(2)
+[
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a7'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a8'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8a9'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c1fdcb375c7b3b6b5f8aa'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f899'),
+    nombre: 'Ana',
+    ciudad: 'Lima',
+    edad: 28,
+    correo: 'anay@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89a'),
+    nombre: 'Carlos',
+    ciudad: 'Bogotá',
+    edad: 34,
+    correo: 'carlos@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89b'),
+    nombre: 'María',
+    ciudad: 'Lima',
+    edad: 22,
+    correo: 'maria@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89c'),
+    nombre: 'José',
+    ciudad: 'Quito',
+    edad: 40,
+    correo: 'jose@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89d'),
+    nombre: 'Lucía',
+    ciudad: 'Bogotá',
+    edad: 19,
+    correo: 'lucia@unab.edu.sv'
+  },
+  {
+    _id: ObjectId('681c28c3b5728ceda8b5f89e'),
+    nombre: 'Pedro',
+    ciudad: 'Lima',
+    edad: 35,
+    correo: 'pedro@unab.edu.sv'
+  }
+]
+usuarioUNAB>
+usuarioUNAB> db.usuarioUNAB.createIndex({ ciudad: 1 })
+ciudad_1
+usuarioUNAB> db.usuarioUNAB.createIndex({ ciudad: 1, edad: -1 })
+ciudad_1_edad_-1
+usuarioUNAB> db.usuarioUNAB.createIndex({ correo: 1 }, { unique: true })
+correo_1
+usuarioUNAB>
+usuarioUNAB> db.usuarioUNAB.find({ nombre: "Pedro" }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'usuarioUNAB.usuarioUNAB',
+    parsedQuery: { nombre: { '$eq': 'Pedro' } },
+    indexFilterSet: false,
+    queryHash: '78CE6D7E',
+    planCacheShapeHash: '78CE6D7E',
+    planCacheKey: '4E1FE5BE',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { nombre: { '$eq': 'Pedro' } },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 1,
+    executionTimeMillis: 0,
+    totalKeysExamined: 0,
+    totalDocsExamined: 6,
+    executionStages: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { nombre: { '$eq': 'Pedro' } },
+      nReturned: 1,
+      executionTimeMillisEstimate: 0,
+      works: 7,
+      advanced: 1,
+      needTime: 5,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 6
+    }
+  },
+  queryShapeHash: '812DCD0FB6CFFEFDAE249E2AFAD8F6D6707839D950E50A4D5F81F430491F7F14',
+  command: {
+    find: 'usuarioUNAB',
+    filter: { nombre: 'Pedro' },
+    '$db': 'usuarioUNAB'
+  },
+  serverInfo: {
+    host: 'Alvaro',
+    port: 27017,
+    version: '8.0.8',
+    gitVersion: '7f52660c14217ed2c8d3240f823a2291a4fe6abd'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+usuarioUNAB> db.usuarioUNAB.createIndex({ nombre: 1 })
+nombre_1
+usuarioUNAB> db.usuarioUNAB.find({ nombre: "Pedro" }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'usuarioUNAB.usuarioUNAB',
+    parsedQuery: { nombre: { '$eq': 'Pedro' } },
+    indexFilterSet: false,
+    queryHash: '78CE6D7E',
+    planCacheShapeHash: '78CE6D7E',
+    planCacheKey: 'EFDB41A7',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'FETCH',
+      inputStage: {
+        stage: 'IXSCAN',
+        keyPattern: { nombre: 1 },
+        indexName: 'nombre_1',
+        isMultiKey: false,
+        multiKeyPaths: { nombre: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { nombre: [ '["Pedro", "Pedro"]' ] }
+      }
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 1,
+    executionTimeMillis: 3,
+    totalKeysExamined: 1,
+    totalDocsExamined: 1,
+    executionStages: {
+      isCached: false,
+      stage: 'FETCH',
+      nReturned: 1,
+      executionTimeMillisEstimate: 0,
+      works: 2,
+      advanced: 1,
+      needTime: 0,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      docsExamined: 1,
+      alreadyHasObj: 0,
+      inputStage: {
+        stage: 'IXSCAN',
+        nReturned: 1,
+        executionTimeMillisEstimate: 0,
+        works: 2,
+        advanced: 1,
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 1,
+        keyPattern: { nombre: 1 },
+        indexName: 'nombre_1',
+        isMultiKey: false,
+        multiKeyPaths: { nombre: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { nombre: [ '["Pedro", "Pedro"]' ] },
+        keysExamined: 1,
+        seeks: 1,
+        dupsTested: 0,
+        dupsDropped: 0
+      }
+    }
+  },
+  queryShapeHash: '812DCD0FB6CFFEFDAE249E2AFAD8F6D6707839D950E50A4D5F81F430491F7F14',
+  command: {
+    find: 'usuarioUNAB',
+    filter: { nombre: 'Pedro' },
+    '$db': 'usuarioUNAB'
+  },
+  serverInfo: {
+    host: 'Alvaro',
+    port: 27017,
+    version: '8.0.8',
+    gitVersion: '7f52660c14217ed2c8d3240f823a2291a4fe6abd'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+usuarioUNAB>
+usuarioUNAB> db.usuarioUNAB.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { ciudad: 1 }, name: 'ciudad_1' },
+  { v: 2, key: { ciudad: 1, edad: -1 }, name: 'ciudad_1_edad_-1' },
+  { v: 2, key: { correo: 1 }, name: 'correo_1', unique: true },
+  { v: 2, key: { nombre: 1 }, name: 'nombre_1' }
+]
+usuarioUNAB> db.usuarioUNAB.dropIndex("nombre_1")
+{ nIndexesWas: 5, ok: 1 }
+usuarioUNAB>
+usuarioUNAB> db.usuarioUNAB.insertOne({ nombre: "Otro", ciudad: "Cali", edad: 30, correo: "pedro@gmail.com" })
+{
+  acknowledged: true,
+  insertedId: ObjectId('681c2c20b5728ceda8b5f89f')
+}
+usuarioUNAB>
