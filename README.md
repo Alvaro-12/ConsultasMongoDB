@@ -1,2 +1,3 @@
 # ConsultasMongoDB
-Actividad de modulo 3: Consultas basicas de MongoDB
+Actividades del modulo 3
+carpeta "registration": Actividad 1 - Consultas basicas de MongoD
