@@ -1,0 +1,515 @@
+//creacion de la base de datos
+use unab 
+switched to db unab
+//creacion de la coleccion
+db.createCollection("empleados")
+
+//registro de los 20 empleados 
+db.empleados.insertMany ([
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a22"
+  },
+  "nombre": "Carolina Suárez",
+  "edad": 29,
+  "ciudad": "Bogotá",
+  "correo": "carolina.suarez@unab.com",
+  "cargo": "Desarrolladora Backend",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a23"
+  },
+  "nombre": "Luis Gómez",
+  "edad": 34,
+  "ciudad": "Medellín",
+  "correo": "luis.gomez@unab.com",
+  "cargo": "Administrador de Sistemas",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a24"
+  },
+  "nombre": "Ana Torres",
+  "edad": 27,
+  "ciudad": "Cali",
+  "correo": "ana.torres@unab.com",
+  "cargo": "Diseñadora UX/UI",
+  "departamento": "Diseño"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a25"
+  },
+  "nombre": "Diego Ramírez",
+  "edad": 31,
+  "ciudad": "Barranquilla",
+  "correo": "diego.ramirez@unab.com",
+  "cargo": "Desarrollador Backend",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a26"
+  },
+  "nombre": "María López",
+  "edad": 26,
+  "ciudad": "Bucaramanga",
+  "correo": "maria.lopez@unab.com",
+  "cargo": "Scrum Master",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a27"
+  },
+  "nombre": "Juan Pérez",
+  "edad": 40,
+  "ciudad": "Bogotá",
+  "correo": "juan.perez@unab.com",
+  "cargo": "Analista de Datos",
+  "departamento": "Operaciones"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a28"
+  },
+  "nombre": "Valeria Medina",
+  "edad": 32,
+  "ciudad": "Medellín",
+  "correo": "valeria.medina@unab.com",
+  "cargo": "Ingeniera de Seguridad",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a29"
+  },
+  "nombre": "Pedro Castillo",
+  "edad": 37,
+  "ciudad": "Cali",
+  "correo": "pedro.castillo@unab.com",
+  "cargo": "Tester QA",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a2a"
+  },
+  "nombre": "Daniela Vargas",
+  "edad": 28,
+  "ciudad": "Bogotá",
+  "correo": "daniela.vargas@unab.com",
+  "cargo": "Desarrolladora Frontend",
+  "departamento": "Diseño"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a2b"
+  },
+  "nombre": "Sofía Morales",
+  "edad": 24,
+  "ciudad": "Bucaramanga",
+  "correo": "sofia.morales@unab.com",
+  "cargo": "Scrum Master",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a2c"
+  },
+  "nombre": "Andrés Rojas",
+  "edad": 35,
+  "ciudad": "Barranquilla",
+  "correo": "andres.rojas@unab.com",
+  "cargo": "Administrador de Sistemas",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a2d"
+  },
+  "nombre": "Laura Pineda",
+  "edad": 29,
+  "ciudad": "Cali",
+  "correo": "laura.pineda@unab.com",
+  "cargo": "Desarrolladora Backend",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a2e"
+  },
+  "nombre": "Esteban Herrera",
+  "edad": 33,
+  "ciudad": "Medellín",
+  "correo": "esteban.herrera@unab.com",
+  "cargo": "Analista de Datos",
+  "departamento": "Operaciones"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a2f"
+  },
+  "nombre": "Camila Castro",
+  "edad": 30,
+  "ciudad": "Bogotá",
+  "correo": "camila.castro@unab.com",
+  "cargo": "Diseñadora UX/UI",
+  "departamento": "Diseño"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a30"
+  },
+  "nombre": "Santiago Díaz",
+  "edad": 36,
+  "ciudad": "Bucaramanga",
+  "correo": "santiago.diaz@unab.com",
+  "cargo": "Ingeniero DevOps",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a31"
+  },
+  "nombre": "Natalia Reyes",
+  "edad": 25,
+  "ciudad": "Barranquilla",
+  "correo": "natalia.reyes@unab.com",
+  "cargo": "Tester QA",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a32"
+  },
+  "nombre": "Julián Martínez",
+  "edad": 38,
+  "ciudad": "Cali",
+  "correo": "julian.martinez@unab.com",
+  "cargo": "Administrador de Sistemas",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a33"
+  },
+  "nombre": "Isabela Cano",
+  "edad": 27,
+  "ciudad": "Bogotá",
+  "correo": "isabela.cano@unab.com",
+  "cargo": "Diseñadora UX/UI",
+  "departamento": "Diseño"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a34"
+  },
+  "nombre": "Fernando Ruiz",
+  "edad": 42,
+  "ciudad": "Medellín",
+  "correo": "fernando.ruiz@unab.com",
+  "cargo": "Scrum Master",
+  "departamento": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "682a7fdf6e36965211519a35"
+  },
+  "nombre": "Paula Méndez",
+  "edad": 30,
+  "ciudad": "Bogotá",
+  "correo": "paula.mendez@unab.com",
+  "cargo": "Arquitecta de Software",
+  "departamento": "Tecnología"
+}
+])
+
+
+// Primero indice: simple para el campo ciudad.
+//Este busca los registros en la coleccion, ordenados alfabeticamente por la ciudad
+db.empleados.find().sort({ ciudad: 1 })
+//
+unab> db.empleados.find().sort({ ciudad: 1 })
+[
+  {
+    _id: ObjectId('682a7fdf6e36965211519a25'),
+    nombre: 'Diego Ramírez',
+    edad: 31,
+    ciudad: 'Barranquilla',
+    correo: 'diego.ramirez@unab.com',
+    cargo: 'Desarrollador Backend',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2c'),
+    nombre: 'Andrés Rojas',
+    edad: 35,
+    ciudad: 'Barranquilla',
+    correo: 'andres.rojas@unab.com',
+    cargo: 'Administrador de Sistemas',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a31'),
+    nombre: 'Natalia Reyes',
+    edad: 25,
+    ciudad: 'Barranquilla',
+    correo: 'natalia.reyes@unab.com',
+    cargo: 'Tester QA',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a22'),
+    nombre: 'Carolina Suárez',
+    edad: 29,
+    ciudad: 'Bogotá',
+    correo: 'carolina.suarez@unab.com',
+    cargo: 'Desarrolladora Backend',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a27'),
+    nombre: 'Juan Pérez',
+    edad: 40,
+    ciudad: 'Bogotá',
+    correo: 'juan.perez@unab.com',
+    cargo: 'Analista de Datos',
+    departamento: 'Operaciones'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2a'),
+    nombre: 'Daniela Vargas',
+    edad: 28,
+    ciudad: 'Bogotá',
+    correo: 'daniela.vargas@unab.com',
+    cargo: 'Desarrolladora Frontend',
+    departamento: 'Diseño'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2f'),
+    nombre: 'Camila Castro',
+    edad: 30,
+    ciudad: 'Bogotá',
+    correo: 'camila.castro@unab.com',
+    cargo: 'Diseñadora UX/UI',
+    departamento: 'Diseño'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a33'),
+    nombre: 'Isabela Cano',
+    edad: 27,
+    ciudad: 'Bogotá',
+    correo: 'isabela.cano@unab.com',
+    cargo: 'Diseñadora UX/UI',
+    departamento: 'Diseño'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a35'),
+    nombre: 'Paula Méndez',
+    edad: 30,
+    ciudad: 'Bogotá',
+    correo: 'paula.mendez@unab.com',
+    cargo: 'Arquitecta de Software',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a26'),
+    nombre: 'María López',
+    edad: 26,
+    ciudad: 'Bucaramanga',
+    correo: 'maria.lopez@unab.com',
+    cargo: 'Scrum Master',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2b'),
+    nombre: 'Sofía Morales',
+    edad: 24,
+    ciudad: 'Bucaramanga',
+    correo: 'sofia.morales@unab.com',
+    cargo: 'Scrum Master',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a30'),
+    nombre: 'Santiago Díaz',
+    edad: 36,
+    ciudad: 'Bucaramanga',
+    correo: 'santiago.diaz@unab.com',
+    cargo: 'Ingeniero DevOps',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a24'),
+    nombre: 'Ana Torres',
+    edad: 27,
+    ciudad: 'Cali',
+    correo: 'ana.torres@unab.com',
+    cargo: 'Diseñadora UX/UI',
+    departamento: 'Diseño'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a29'),
+    nombre: 'Pedro Castillo',
+    edad: 37,
+    ciudad: 'Cali',
+    correo: 'pedro.castillo@unab.com',
+    cargo: 'Tester QA',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2d'),
+    nombre: 'Laura Pineda',
+    edad: 29,
+    ciudad: 'Cali',
+    correo: 'laura.pineda@unab.com',
+    cargo: 'Desarrolladora Backend',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a32'),
+    nombre: 'Julián Martínez',
+    edad: 38,
+    ciudad: 'Cali',
+    correo: 'julian.martinez@unab.com',
+    cargo: 'Administrador de Sistemas',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a23'),
+    nombre: 'Luis Gómez',
+    edad: 34,
+    ciudad: 'Medellín',
+    correo: 'luis.gomez@unab.com',
+    cargo: 'Administrador de Sistemas',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a28'),
+    nombre: 'Valeria Medina',
+    edad: 32,
+    ciudad: 'Medellín',
+    correo: 'valeria.medina@unab.com',
+    cargo: 'Ingeniera de Seguridad',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2e'),
+    nombre: 'Esteban Herrera',
+    edad: 33,
+    ciudad: 'Medellín',
+    correo: 'esteban.herrera@unab.com',
+    cargo: 'Analista de Datos',
+    departamento: 'Operaciones'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a34'),
+    nombre: 'Fernando Ruiz',
+    edad: 42,
+    ciudad: 'Medellín',
+    correo: 'fernando.ruiz@unab.com',
+    cargo: 'Scrum Master',
+    departamento: 'Tecnología'
+  }
+]
+
+//Segundo indice:  compuesto para ciudad y edad.
+//En la seccion de "Medellín" se puede cambiar por la ciudad que se busque, y en edad ya sea "-1" o "1"v puede ser para orden de mayor a menor 
+db.empleados.find({ ciudad: "Medellín" }).sort({ edad: -1 })
+
+//
+unab> db.empleados.find({ ciudad: "Medellín" }).sort({ edad: 1 })
+[
+  {
+    _id: ObjectId('682a7fdf6e36965211519a28'),
+    nombre: 'Valeria Medina',
+    edad: 32,
+    ciudad: 'Medellín',
+    correo: 'valeria.medina@unab.com',
+    cargo: 'Ingeniera de Seguridad',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2e'),
+    nombre: 'Esteban Herrera',
+    edad: 33,
+    ciudad: 'Medellín',
+    correo: 'esteban.herrera@unab.com',
+    cargo: 'Analista de Datos',
+    departamento: 'Operaciones'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a23'),
+    nombre: 'Luis Gómez',
+    edad: 34,
+    ciudad: 'Medellín',
+    correo: 'luis.gomez@unab.com',
+    cargo: 'Administrador de Sistemas',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a34'),
+    nombre: 'Fernando Ruiz',
+    edad: 42,
+    ciudad: 'Medellín',
+    correo: 'fernando.ruiz@unab.com',
+    cargo: 'Scrum Master',
+    departamento: 'Tecnología'
+  }
+]
+
+//Tercer indicie:  único en el campo correo.
+unab> db.empleados.createIndex({ correo: 1 }, { unique: true })
+correo_1
+unab> db.empleados.insertOne({
+...   "nombre": "Carolina Suárez",
+...   "edad": 29,
+...   "ciudad": "Bogotá",
+...   "correo": "carolina.suarez@unab.com",
+...   "cargo": "Desarrolladora Backend",
+...   "departamento": "Tecnología"
+... })
+MongoServerError: E11000 duplicate key error collection: unab.empleados index: correo_1 dup key: { correo: "carolina.suarez@unab.com" }
+unab>
+
+//Cuarto indice: de texto en el campo cargo.
+
+unab> db.empleados.createIndex({ cargo: "text" })
+cargo_text
+unab> db.empleados.find({ $text: { $search: "Backend" } })
+[
+  {
+    _id: ObjectId('682a7fdf6e36965211519a2d'),
+    nombre: 'Laura Pineda',
+    edad: 29,
+    ciudad: 'Cali',
+    correo: 'laura.pineda@unab.com',
+    cargo: 'Desarrolladora Backend',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a25'),
+    nombre: 'Diego Ramírez',
+    edad: 31,
+    ciudad: 'Barranquilla',
+    correo: 'diego.ramirez@unab.com',
+    cargo: 'Desarrollador Backend',
+    departamento: 'Tecnología'
+  },
+  {
+    _id: ObjectId('682a7fdf6e36965211519a22'),
+    nombre: 'Carolina Suárez',
+    edad: 29,
+    ciudad: 'Bogotá',
+    correo: 'carolina.suarez@unab.com',
+    cargo: 'Desarrolladora Backend',
+    departamento: 'Tecnología'
+  }
+]
+unab>
+
+//fin
